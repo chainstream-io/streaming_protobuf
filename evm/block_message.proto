@@ -1,0 +1,100 @@
+syntax = "proto3";
+package io.chainstream.v1.evm.evm_messages;
+
+message AddressCode {
+  bytes Hash = 1;
+  int32 Size = 2;
+  bool Suicided = 3;
+}
+
+message BlockHeader {
+
+  string Hash = 1;
+  string ParentHash = 2;
+  string UncleHash = 3;
+  bytes Root = 4;
+  string TxHash = 5;
+  string ReceiptHash = 6;
+  string MixDigest = 7;
+
+  string Coinbase = 8;
+  bytes Bloom = 9;
+  bytes Extra = 10;
+
+  uint64 Nonce = 11;
+  bytes Difficulty = 12;
+  uint64 Number = 13;
+  uint64 GasLimit = 14;
+  uint64 GasUsed = 15;
+  uint64 Time = 16;
+  bytes BaseFee = 17;
+
+  // only applicable for optimism
+  optional uint64 SequenceNumber = 18;
+
+  // only applicable for optimism
+  optional bytes BatcherAddr = 19;
+
+  // only applicable for optimism
+  optional bytes L1FeeOverhead = 20;
+
+  // only applicable for optimism
+  optional bytes L1FeeScalar = 21;
+}
+
+message AccessTuple {
+  string Address = 1;
+  repeated string  StorageKeys = 2;
+}
+
+message TransactionHeader {
+  uint64 Index = 1;
+  string Hash = 2;
+  uint64 GasUsed = 3;
+  uint64 GasLimit = 4;
+  bytes Value = 5;
+  bytes Data = 6;
+  uint64 Nonce = 7;
+  string ChainId = 8;
+  string Cost = 9;
+  string GasFeeCap = 10;
+  string GasPrice = 11;
+  string GasTipCap = 12;
+  bool Protected = 13;
+  uint32 Type = 14;
+  string To = 15;
+  string From = 16;
+  AddressCode ToCode = 17;
+  repeated AccessTuple AccessList = 18;
+
+  // only applicable for arbitrum
+  optional uint64 GasL1 = 19;
+
+  // only applicable for optimism
+  optional bool IsSystemTx = 20;
+
+  // only applicable for optimism
+  optional uint64 EffectiveNonce = 21;
+
+  // only applicable for optimism
+  optional bytes SourceHash = 22;
+
+  // only applicable to broadcasted
+  optional uint64 Time = 23;
+
+  // for Txn Type: 3 (EIP-4844)
+  optional Blob Blob = 24;
+}
+
+message Blob {
+  repeated bytes Hashes = 1;
+  repeated bytes Proofs = 2;
+  repeated bytes Commitments = 3;
+  uint64 BlobGas = 4;
+  bytes BlobGasFeeCap = 5;
+}
+
+message Chain {
+  string ChainId = 1;
+  string Config = 2;
+}

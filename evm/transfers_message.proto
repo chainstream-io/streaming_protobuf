@@ -1,0 +1,45 @@
+syntax = "proto3";
+package io.chainstream.v1.evm.evm_messages;
+
+import "evm/block_message.proto";
+
+message TokenInfo {
+  string SmartContract = 1;
+  bool  Delegated = 2;
+  string DelegatedTo = 3;
+  string ProtocolName = 4;
+  string Name = 5;
+  string Symbol = 6;
+  int32  Decimals = 7;
+  bool   HasURI = 8;
+  bool   Fungible = 9;
+  string  AssetId = 10;
+}
+
+message Transfer {
+  uint64 CallIndex = 2;
+  uint64 LogIndex = 3;
+
+  string  Sender = 4;
+  string  Receiver = 5;
+
+  string Amount = 6;
+  string Id = 7;
+  string URI = 8;
+
+  TokenInfo Currency = 9;
+  bool Success = 10;
+  bytes Data = 12;
+  uint32 Index = 13;
+
+  TransactionHeader TransactionHeader = 14;
+
+}
+
+message TransfersMessage {
+  Chain Chain = 1;
+  BlockHeader Header = 2;
+  repeated Transfer Transfers = 5;
+  optional BlockHeader L1Header = 6;
+}
+

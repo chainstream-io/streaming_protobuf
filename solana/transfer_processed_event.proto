@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package io.chainstream.v1.transfer;
+
+import "solana/common.proto";
+
+message TransferProcessed {
+  string token_amount_in_native = 300;
+  string token_amount_in_usd = 301;
+  string token_price_in_native = 310;
+  string token_price_in_usd = 311;
+}

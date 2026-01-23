@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package io.chainstream.v1.tron.tron_messages;
+
+// Tx message
+message TransactionHeader {
+  string Hash = 1;
+  int64 Fee = 2;
+  int32 Index = 3;
+  int64 Expiration = 4;
+  bytes Data = 5;
+  int64 FeeLimit = 6;
+  int64 Timestamp = 7;
+  repeated string Signatures = 8;
+  // only applicable to broadcasted
+  optional uint64 Time = 9;
+  string FeePayer = 10;
+};
+
+// Block message
+message BlockHeader {
+  int64 Number = 1;
+  string Hash = 2;
+  int64 Timestamp = 3;
+  string ParentHash = 4;
+  int64 ParentNumber = 5;
+  int32 Version = 6;
+  bytes TxTrieRoot = 7;
+  optional bytes AccountStateRoot = 8;
+  uint32 TransactionsCount = 9;
+};
+
+message Chain {
+  string ChainId = 1;
+}
