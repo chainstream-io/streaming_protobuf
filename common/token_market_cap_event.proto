@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package io.chainstream.v1.token.market_cap;
+
+import "common/common.proto";
+import "common/token_supply_processed_event.proto";
+
+message TokenMarketCapEvents {
+  repeated TokenMarketCapEvent events = 1;
+}
+
+message TokenMarketCapEvent {
+  io.chainstream.v1.common.Instruction instruction = 1;
+  io.chainstream.v1.common.Block block = 2;
+  io.chainstream.v1.common.Transaction transaction = 3;
+  io.chainstream.v1.common.DApp d_app = 4;
+
+  io.chainstream.v1.token.supply.MarketCap market_cap = 100;
+}
+

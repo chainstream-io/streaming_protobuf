@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package io.chainstream.v1.trade.stat;
+
+message TradeStatEvents {
+  repeated TradeStatEvent events = 1;
+}
+
+message TradeStatEvent {
+  string token_address = 1;
+  string resolution = 2;
+  string timestamp = 3;
+  string open_in_usd = 4;
+  string open_in_native = 5;
+  string close_in_usd = 6;
+  string close_in_native = 7;
+  uint64 buys = 8;
+  uint64 sells = 9;
+  uint64 buyers = 10;
+  uint64 sellers = 11;
+  string buy_volume = 12;
+  string buy_volume_in_usd = 13;
+  string buy_volume_in_native = 14;
+  string sell_volume = 15;
+  string sell_volume_in_usd = 16;
+  string sell_volume_in_native = 17;
+  string high_in_usd = 18;
+  string high_in_native = 19;
+  string low_in_usd = 20;
+  string low_in_native = 21;
+}

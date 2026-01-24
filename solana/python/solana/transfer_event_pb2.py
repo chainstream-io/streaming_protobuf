@@ -22,11 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from solana import common_pb2 as solana_dot_common__pb2
+from common import common_pb2 as common_dot_common__pb2
 from solana import transfer_processed_event_pb2 as solana_dot_transfer__processed__event__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bsolana/transfer_event.proto\x12\x1aio.chainstream.v1.transfer\x1a\x13solana/common.proto\x1a%solana/transfer_processed_event.proto\"K\n\x0eTransferEvents\x12\x39\n\x06\x65vents\x18\x01 \x03(\x0b\x32).io.chainstream.v1.transfer.TransferEvent\"\xd5\x01\n\x08Transfer\x12$\n\x1csender_token_account_address\x18\x01 \x01(\t\x12$\n\x1csender_account_owner_address\x18\x02 \x01(\t\x12&\n\x1ereceiver_token_account_address\x18\x64 \x01(\t\x12&\n\x1ereceiver_account_owner_address\x18\x65 \x01(\t\x12\x16\n\rtoken_address\x18\xc8\x01 \x01(\t\x12\x15\n\x0ctoken_amount\x18\xc9\x01 \x01(\t\"\xea\x02\n\rTransferEvent\x12:\n\x0binstruction\x18\x01 \x01(\x0b\x32%.io.chainstream.v1.common.Instruction\x12.\n\x05\x62lock\x18\x02 \x01(\x0b\x32\x1f.io.chainstream.v1.common.Block\x12:\n\x0btransaction\x18\x03 \x01(\x0b\x32%.io.chainstream.v1.common.Transaction\x12-\n\x05\x64_app\x18\x04 \x01(\x0b\x32\x1e.io.chainstream.v1.common.DApp\x12\x36\n\x08transfer\x18\x64 \x01(\x0b\x32$.io.chainstream.v1.transfer.Transfer\x12J\n\x12transfer_processed\x18\xc8\x01 \x01(\x0b\x32-.io.chainstream.v1.transfer.TransferProcessedb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bsolana/transfer_event.proto\x12\x1aio.chainstream.v1.transfer\x1a\x13\x63ommon/common.proto\x1a%solana/transfer_processed_event.proto\"K\n\x0eTransferEvents\x12\x39\n\x06\x65vents\x18\x01 \x03(\x0b\x32).io.chainstream.v1.transfer.TransferEvent\"\xd5\x01\n\x08Transfer\x12$\n\x1csender_token_account_address\x18\x01 \x01(\t\x12$\n\x1csender_account_owner_address\x18\x02 \x01(\t\x12&\n\x1ereceiver_token_account_address\x18\x64 \x01(\t\x12&\n\x1ereceiver_account_owner_address\x18\x65 \x01(\t\x12\x16\n\rtoken_address\x18\xc8\x01 \x01(\t\x12\x15\n\x0ctoken_amount\x18\xc9\x01 \x01(\t\"\xea\x02\n\rTransferEvent\x12:\n\x0binstruction\x18\x01 \x01(\x0b\x32%.io.chainstream.v1.common.Instruction\x12.\n\x05\x62lock\x18\x02 \x01(\x0b\x32\x1f.io.chainstream.v1.common.Block\x12:\n\x0btransaction\x18\x03 \x01(\x0b\x32%.io.chainstream.v1.common.Transaction\x12-\n\x05\x64_app\x18\x04 \x01(\x0b\x32\x1e.io.chainstream.v1.common.DApp\x12\x36\n\x08transfer\x18\x64 \x01(\x0b\x32$.io.chainstream.v1.transfer.Transfer\x12J\n\x12transfer_processed\x18\xc8\x01 \x01(\x0b\x32-.io.chainstream.v1.transfer.TransferProcessedb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

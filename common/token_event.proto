@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package io.chainstream.v1.token;
+
+import "common/common.proto";
+import "common/token_processed_event.proto";
+
+message TokenEvents {
+  repeated TokenEvent events = 1;
+}
+
+message Token {
+  string address = 1;
+  string name = 2;
+  string symbol = 3;
+  uint32 decimals = 4;
+  string uri = 5;
+  string metadata_address = 6;
+  repeated Creator creators = 7;
+
+  map<string, string> additional_metadata = 99;
+
+  SolanaExtra solana_extra = 101;
+  EvmExtra evm_extra = 102;
+}
+
+message SolanaExtra {
+  string collection_address = 1;
+  int64 edition_nonce = 2;
+  bool fungible = 3;
+  bool is_mutable = 4;
+  string key = 5;
+  bool is_native = 6;
+  bool primary_sale_happened = 7;
+  string program_address = 8;
+  int32 seller_fee_basis_points = 9;
+  string token_standard = 10;
+  string mint_authority = 11;
+  string freeze_authority = 12;
+  string update_authority = 13;
+  bool is_verified_collection = 14;
+  bool is_wrapped = 15;
+  string outer_program_address = 16;
+}
+
+enum TokenStandard {
+  TOKEN_STANDARD_UNSPECIFIED = 0;
+  TOKEN_STANDARD_NATIVE      = 1;
+  TOKEN_STANDARD_ERC20       = 2;
+  TOKEN_STANDARD_ERC721      = 3;
+  TOKEN_STANDARD_ERC1155     = 4;
+}
+
+message EvmExtra {
+  TokenStandard token_standard = 1;
+}
+
+message Creator {
+  string address = 1;
+  bool verified = 2;
+  int32 share = 3;
+}
+
+enum EventType {
+  EVENT_TYPE_UNSPECIFIED = 0;
+  EVENT_TYPE_CREATED = 1;
+  EVENT_TYPE_UPDATED = 2;
+}
+
+message TokenEvent {
+  io.chainstream.v1.common.Instruction instruction = 1;
+  io.chainstream.v1.common.Block block = 2;
+  io.chainstream.v1.common.Transaction transaction = 3;
+  io.chainstream.v1.common.DApp d_app = 4;
+
+  EventType type = 100;
+  Token token = 101;
+
+  TokenProcessed token_processed = 200;
+}

@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package io.chainstream.v1.dex.pool;
+
+message TokenLiquidity {
+  string token_address = 1;
+  string amount = 2;
+  string liquidity_in_native = 3;
+  string liquidity_in_usd = 4;
+}
+
+message DexPoolProcessed {
+  string token_a_amount_in_native = 20;
+  string token_a_amount_in_usd = 21;
+  string token_a_vault_pre_amount_in_native = 22;
+  string token_a_vault_pre_amount_in_usd = 23;
+  string token_a_vault_post_amount_in_native = 24;
+  string token_a_vault_post_amount_in_usd = 25;
+
+  TokenLiquidity token_a_liquidity = 30;
+  TokenLiquidity token_a_max_liquidity = 40;
+
+  string token_b_amount_in_native = 120;
+  string token_b_amount_in_usd = 121;
+  string token_b_vault_pre_amount_in_native = 122;
+  string token_b_vault_pre_amount_in_usd = 123;
+  string token_b_vault_post_amount_in_native = 124;
+  string token_b_vault_post_amount_in_usd = 125;
+
+  TokenLiquidity token_b_liquidity = 130;
+  TokenLiquidity token_b_max_liquidity = 140;
+
+  // owner
+  string owner_dapp_program = 150;
+}

@@ -2,12 +2,11 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v6.33.1
-// source: solana/transfer_event.proto
+// source: common/transfer_event.proto
 
-package solana_messages
+package common_messages
 
 import (
-	messages "github.com/chainstream/streaming_protobuf/v1/common/messages"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -32,7 +31,7 @@ type TransferEvents struct {
 func (x *TransferEvents) Reset() {
 	*x = TransferEvents{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_solana_transfer_event_proto_msgTypes[0]
+		mi := &file_common_transfer_event_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -45,7 +44,7 @@ func (x *TransferEvents) String() string {
 func (*TransferEvents) ProtoMessage() {}
 
 func (x *TransferEvents) ProtoReflect() protoreflect.Message {
-	mi := &file_solana_transfer_event_proto_msgTypes[0]
+	mi := &file_common_transfer_event_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -58,7 +57,7 @@ func (x *TransferEvents) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TransferEvents.ProtoReflect.Descriptor instead.
 func (*TransferEvents) Descriptor() ([]byte, []int) {
-	return file_solana_transfer_event_proto_rawDescGZIP(), []int{0}
+	return file_common_transfer_event_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *TransferEvents) GetEvents() []*TransferEvent {
@@ -84,7 +83,7 @@ type Transfer struct {
 func (x *Transfer) Reset() {
 	*x = Transfer{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_solana_transfer_event_proto_msgTypes[1]
+		mi := &file_common_transfer_event_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -97,7 +96,7 @@ func (x *Transfer) String() string {
 func (*Transfer) ProtoMessage() {}
 
 func (x *Transfer) ProtoReflect() protoreflect.Message {
-	mi := &file_solana_transfer_event_proto_msgTypes[1]
+	mi := &file_common_transfer_event_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -110,7 +109,7 @@ func (x *Transfer) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Transfer.ProtoReflect.Descriptor instead.
 func (*Transfer) Descriptor() ([]byte, []int) {
-	return file_solana_transfer_event_proto_rawDescGZIP(), []int{1}
+	return file_common_transfer_event_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Transfer) GetSenderTokenAccountAddress() string {
@@ -160,18 +159,18 @@ type TransferEvent struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Instruction       *messages.Instruction `protobuf:"bytes,1,opt,name=instruction,proto3" json:"instruction,omitempty"`
-	Block             *messages.Block       `protobuf:"bytes,2,opt,name=block,proto3" json:"block,omitempty"`
-	Transaction       *messages.Transaction `protobuf:"bytes,3,opt,name=transaction,proto3" json:"transaction,omitempty"`
-	DApp              *messages.DApp        `protobuf:"bytes,4,opt,name=d_app,json=dApp,proto3" json:"d_app,omitempty"`
-	Transfer          *Transfer             `protobuf:"bytes,100,opt,name=transfer,proto3" json:"transfer,omitempty"`
-	TransferProcessed *TransferProcessed    `protobuf:"bytes,200,opt,name=transfer_processed,json=transferProcessed,proto3" json:"transfer_processed,omitempty"`
+	Instruction       *Instruction       `protobuf:"bytes,1,opt,name=instruction,proto3" json:"instruction,omitempty"`
+	Block             *Block             `protobuf:"bytes,2,opt,name=block,proto3" json:"block,omitempty"`
+	Transaction       *Transaction       `protobuf:"bytes,3,opt,name=transaction,proto3" json:"transaction,omitempty"`
+	DApp              *DApp              `protobuf:"bytes,4,opt,name=d_app,json=dApp,proto3" json:"d_app,omitempty"`
+	Transfer          *Transfer          `protobuf:"bytes,100,opt,name=transfer,proto3" json:"transfer,omitempty"`
+	TransferProcessed *TransferProcessed `protobuf:"bytes,200,opt,name=transfer_processed,json=transferProcessed,proto3" json:"transfer_processed,omitempty"`
 }
 
 func (x *TransferEvent) Reset() {
 	*x = TransferEvent{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_solana_transfer_event_proto_msgTypes[2]
+		mi := &file_common_transfer_event_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -184,7 +183,7 @@ func (x *TransferEvent) String() string {
 func (*TransferEvent) ProtoMessage() {}
 
 func (x *TransferEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_solana_transfer_event_proto_msgTypes[2]
+	mi := &file_common_transfer_event_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -197,31 +196,31 @@ func (x *TransferEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TransferEvent.ProtoReflect.Descriptor instead.
 func (*TransferEvent) Descriptor() ([]byte, []int) {
-	return file_solana_transfer_event_proto_rawDescGZIP(), []int{2}
+	return file_common_transfer_event_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *TransferEvent) GetInstruction() *messages.Instruction {
+func (x *TransferEvent) GetInstruction() *Instruction {
 	if x != nil {
 		return x.Instruction
 	}
 	return nil
 }
 
-func (x *TransferEvent) GetBlock() *messages.Block {
+func (x *TransferEvent) GetBlock() *Block {
 	if x != nil {
 		return x.Block
 	}
 	return nil
 }
 
-func (x *TransferEvent) GetTransaction() *messages.Transaction {
+func (x *TransferEvent) GetTransaction() *Transaction {
 	if x != nil {
 		return x.Transaction
 	}
 	return nil
 }
 
-func (x *TransferEvent) GetDApp() *messages.DApp {
+func (x *TransferEvent) GetDApp() *DApp {
 	if x != nil {
 		return x.DApp
 	}
@@ -242,15 +241,15 @@ func (x *TransferEvent) GetTransferProcessed() *TransferProcessed {
 	return nil
 }
 
-var File_solana_transfer_event_proto protoreflect.FileDescriptor
+var File_common_transfer_event_proto protoreflect.FileDescriptor
 
-var file_solana_transfer_event_proto_rawDesc = []byte{
-	0x0a, 0x1b, 0x73, 0x6f, 0x6c, 0x61, 0x6e, 0x61, 0x2f, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65,
+var file_common_transfer_event_proto_rawDesc = []byte{
+	0x0a, 0x1b, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65,
 	0x72, 0x5f, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1a, 0x69,
 	0x6f, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x73, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x2e, 0x76, 0x31,
 	0x2e, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65, 0x72, 0x1a, 0x13, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x25,
-	0x73, 0x6f, 0x6c, 0x61, 0x6e, 0x61, 0x2f, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65, 0x72, 0x5f,
+	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65, 0x72, 0x5f,
 	0x70, 0x72, 0x6f, 0x63, 0x65, 0x73, 0x73, 0x65, 0x64, 0x5f, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x53, 0x0a, 0x0e, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65,
 	0x72, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x41, 0x0a, 0x06, 0x65, 0x76, 0x65, 0x6e, 0x74,
@@ -311,29 +310,29 @@ var file_solana_transfer_event_proto_rawDesc = []byte{
 }
 
 var (
-	file_solana_transfer_event_proto_rawDescOnce sync.Once
-	file_solana_transfer_event_proto_rawDescData = file_solana_transfer_event_proto_rawDesc
+	file_common_transfer_event_proto_rawDescOnce sync.Once
+	file_common_transfer_event_proto_rawDescData = file_common_transfer_event_proto_rawDesc
 )
 
-func file_solana_transfer_event_proto_rawDescGZIP() []byte {
-	file_solana_transfer_event_proto_rawDescOnce.Do(func() {
-		file_solana_transfer_event_proto_rawDescData = protoimpl.X.CompressGZIP(file_solana_transfer_event_proto_rawDescData)
+func file_common_transfer_event_proto_rawDescGZIP() []byte {
+	file_common_transfer_event_proto_rawDescOnce.Do(func() {
+		file_common_transfer_event_proto_rawDescData = protoimpl.X.CompressGZIP(file_common_transfer_event_proto_rawDescData)
 	})
-	return file_solana_transfer_event_proto_rawDescData
+	return file_common_transfer_event_proto_rawDescData
 }
 
-var file_solana_transfer_event_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
-var file_solana_transfer_event_proto_goTypes = []interface{}{
-	(*TransferEvents)(nil),       // 0: io.chainstream.v1.transfer.TransferEvents
-	(*Transfer)(nil),             // 1: io.chainstream.v1.transfer.Transfer
-	(*TransferEvent)(nil),        // 2: io.chainstream.v1.transfer.TransferEvent
-	(*messages.Instruction)(nil), // 3: io.chainstream.v1.common.Instruction
-	(*messages.Block)(nil),       // 4: io.chainstream.v1.common.Block
-	(*messages.Transaction)(nil), // 5: io.chainstream.v1.common.Transaction
-	(*messages.DApp)(nil),        // 6: io.chainstream.v1.common.DApp
-	(*TransferProcessed)(nil),    // 7: io.chainstream.v1.transfer.TransferProcessed
+var file_common_transfer_event_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_common_transfer_event_proto_goTypes = []interface{}{
+	(*TransferEvents)(nil),    // 0: io.chainstream.v1.transfer.TransferEvents
+	(*Transfer)(nil),          // 1: io.chainstream.v1.transfer.Transfer
+	(*TransferEvent)(nil),     // 2: io.chainstream.v1.transfer.TransferEvent
+	(*Instruction)(nil),       // 3: io.chainstream.v1.common.Instruction
+	(*Block)(nil),             // 4: io.chainstream.v1.common.Block
+	(*Transaction)(nil),       // 5: io.chainstream.v1.common.Transaction
+	(*DApp)(nil),              // 6: io.chainstream.v1.common.DApp
+	(*TransferProcessed)(nil), // 7: io.chainstream.v1.transfer.TransferProcessed
 }
-var file_solana_transfer_event_proto_depIdxs = []int32{
+var file_common_transfer_event_proto_depIdxs = []int32{
 	2, // 0: io.chainstream.v1.transfer.TransferEvents.events:type_name -> io.chainstream.v1.transfer.TransferEvent
 	3, // 1: io.chainstream.v1.transfer.TransferEvent.instruction:type_name -> io.chainstream.v1.common.Instruction
 	4, // 2: io.chainstream.v1.transfer.TransferEvent.block:type_name -> io.chainstream.v1.common.Block
@@ -348,14 +347,15 @@ var file_solana_transfer_event_proto_depIdxs = []int32{
 	0, // [0:7] is the sub-list for field type_name
 }
 
-func init() { file_solana_transfer_event_proto_init() }
-func file_solana_transfer_event_proto_init() {
-	if File_solana_transfer_event_proto != nil {
+func init() { file_common_transfer_event_proto_init() }
+func file_common_transfer_event_proto_init() {
+	if File_common_transfer_event_proto != nil {
 		return
 	}
-	file_solana_transfer_processed_event_proto_init()
+	file_common_common_proto_init()
+	file_common_transfer_processed_event_proto_init()
 	if !protoimpl.UnsafeEnabled {
-		file_solana_transfer_event_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_common_transfer_event_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TransferEvents); i {
 			case 0:
 				return &v.state
@@ -367,7 +367,7 @@ func file_solana_transfer_event_proto_init() {
 				return nil
 			}
 		}
-		file_solana_transfer_event_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_common_transfer_event_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Transfer); i {
 			case 0:
 				return &v.state
@@ -379,7 +379,7 @@ func file_solana_transfer_event_proto_init() {
 				return nil
 			}
 		}
-		file_solana_transfer_event_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_common_transfer_event_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TransferEvent); i {
 			case 0:
 				return &v.state
@@ -396,18 +396,18 @@ func file_solana_transfer_event_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_solana_transfer_event_proto_rawDesc,
+			RawDescriptor: file_common_transfer_event_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_solana_transfer_event_proto_goTypes,
-		DependencyIndexes: file_solana_transfer_event_proto_depIdxs,
-		MessageInfos:      file_solana_transfer_event_proto_msgTypes,
+		GoTypes:           file_common_transfer_event_proto_goTypes,
+		DependencyIndexes: file_common_transfer_event_proto_depIdxs,
+		MessageInfos:      file_common_transfer_event_proto_msgTypes,
 	}.Build()
-	File_solana_transfer_event_proto = out.File
-	file_solana_transfer_event_proto_rawDesc = nil
-	file_solana_transfer_event_proto_goTypes = nil
-	file_solana_transfer_event_proto_depIdxs = nil
+	File_common_transfer_event_proto = out.File
+	file_common_transfer_event_proto_rawDesc = nil
+	file_common_transfer_event_proto_goTypes = nil
+	file_common_transfer_event_proto_depIdxs = nil
 }

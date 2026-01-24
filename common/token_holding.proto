@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package io.chainstream.v1.token.holding;
+
+import "common/common.proto";
+
+message TokenHoldingEvents {
+  repeated TokenHoldingEvent events = 1;
+}
+
+
+message TokenHoldingEvent {
+  io.chainstream.v1.common.Chain chain = 1;
+  string token_address = 2;
+
+  // top holders stats
+  uint64 top10_holders = 3;
+  string top10_amount = 4;
+  string top10_ratio = 5;
+  uint64 top100_holders = 6;
+  string top100_amount = 7;
+  string top100_ratio = 8;
+  uint64 holders = 9;
+
+  // creators stats
+  uint64 creators_count = 10;
+  string creators_amount = 11;
+  string creators_ratio = 12;
+
+  // top 50 holders stats
+  uint64 top50_holders = 13;
+  string top50_amount = 14;
+  string top50_ratio = 15;
+
+  // fresh holders stats
+  uint64 fresh_count = 100;
+  string fresh_amount = 101;
+  string fresh_ratio = 102;
+
+  // sandwich holders stats
+  uint64 sandwich_count = 110;
+  string sandwich_amount = 111;
+  string sandwich_ratio = 112;
+
+  // bundle holders stats
+  uint64 bundle_count = 120;
+  string bundle_amount = 121;
+  string bundle_ratio = 122;
+
+  // sniper holders stats
+  uint64 sniper_count = 130;
+  string sniper_amount = 131;
+  string sniper_ratio = 132;
+
+  // dev holders stats
+  uint64 dev_count = 140;
+  string dev_amount = 141;
+  string dev_ratio = 142;
+
+  // pro holders stats
+  uint64 pro_count = 150;
+  string pro_amount = 151;
+  string pro_ratio = 152;
+
+  // insider holders stats
+  uint64 insider_count = 160;
+  string insider_amount = 161;
+  string insider_ratio = 162;
+
+  // smart holders stats
+  uint64 smart_count = 170;
+  string smart_amount = 171;
+  string smart_ratio = 172;
+
+  uint64 kol_count = 180;
+  string kol_amount = 181;
+  string kol_ratio = 182;
+
+  uint64 phishing_count = 190;
+  string phishing_amount = 191;
+  string phishing_ratio = 192;
+
+  uint64 bluechip_count = 200;
+  string bluechip_amount = 201;
+  string bluechip_ratio = 202;
+
+  uint64 rat_count = 210;
+  string rat_amount = 211;
+  string rat_ratio = 212;
+}

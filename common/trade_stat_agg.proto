@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package io.chainstream.v1.trade.stat;
+
+message TradeStatAggCache {
+  string token_address = 1;
+  string resolution = 2;
+  string timestamp = 3;
+  uint64 open_block_height = 4;
+  uint32 open_transaction_index = 5;
+  uint32 open_instruction_index = 6;
+  string open_in_usd = 7;
+  string open_in_native = 8;
+  string close_in_usd = 9;
+  string close_in_native = 10;
+  uint64 close_block_height = 11;
+  uint32 close_transaction_index = 12;
+  uint32 close_instruction_index = 13;
+  uint64 buys = 14;
+  uint64 sells = 15;
+  repeated string buyer_accounts = 16;
+  repeated string seller_accounts = 17;
+  string buy_volume = 18;
+  string buy_volume_in_usd = 19;
+  string buy_volume_in_native = 20;
+  string sell_volume = 21;
+  string sell_volume_in_usd = 22;
+  string sell_volume_in_native = 23;
+  repeated string unique_keys = 24;
+  string high_in_usd = 25;
+  string high_in_native = 26;
+  string low_in_usd = 27;
+  string low_in_native = 28;
+}

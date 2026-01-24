@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package io.chainstream.v1.candlestick;
+
+message CandlestickAggCache {
+  string token_address = 1;
+  repeated string unique_keys = 2;
+  string resolution = 3;
+  string timestamp = 4;
+  uint64 open_block_height = 5;
+  uint32 open_transaction_index = 6;
+  uint32 open_instruction_index = 7;
+  string open = 8;
+  string open_in_native = 9;
+  string high = 10;
+  string high_in_native = 11;
+  string low = 12;
+  string low_in_native = 13;
+  string close = 14;
+  string close_in_native = 15;
+  uint64 close_block_height = 16;
+  uint32 close_transaction_index = 17;
+  uint32 close_instruction_index = 18;
+  string average_price = 19;
+  string average_price_in_native = 20;
+  string volume = 21;
+  string volume_in_usd = 22;
+  string volume_in_native = 23;
+  int64 trades = 24;
+}

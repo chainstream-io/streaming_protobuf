@@ -3,7 +3,7 @@ syntax = "proto3";
 package io.chainstream.v1.transfer;
 
 import "common/common.proto";
-import "solana/transfer_processed_event.proto";
+import "common/transfer_processed_event.proto";
 
 message TransferEvents {
   repeated TransferEvent events = 1;

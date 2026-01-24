@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v6.33.1
-// source: solana/common.proto
+// source: common/common.proto
 
-package solana_messages
+package common_messages
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -53,11 +53,11 @@ func (x Status) String() string {
 }
 
 func (Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_solana_common_proto_enumTypes[0].Descriptor()
+	return file_common_common_proto_enumTypes[0].Descriptor()
 }
 
 func (Status) Type() protoreflect.EnumType {
-	return &file_solana_common_proto_enumTypes[0]
+	return &file_common_common_proto_enumTypes[0]
 }
 
 func (x Status) Number() protoreflect.EnumNumber {
@@ -66,7 +66,7 @@ func (x Status) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Status.Descriptor instead.
 func (Status) EnumDescriptor() ([]byte, []int) {
-	return file_solana_common_proto_rawDescGZIP(), []int{0}
+	return file_common_common_proto_rawDescGZIP(), []int{0}
 }
 
 type BundleSource int32
@@ -102,11 +102,11 @@ func (x BundleSource) String() string {
 }
 
 func (BundleSource) Descriptor() protoreflect.EnumDescriptor {
-	return file_solana_common_proto_enumTypes[1].Descriptor()
+	return file_common_common_proto_enumTypes[1].Descriptor()
 }
 
 func (BundleSource) Type() protoreflect.EnumType {
-	return &file_solana_common_proto_enumTypes[1]
+	return &file_common_common_proto_enumTypes[1]
 }
 
 func (x BundleSource) Number() protoreflect.EnumNumber {
@@ -115,7 +115,7 @@ func (x BundleSource) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use BundleSource.Descriptor instead.
 func (BundleSource) EnumDescriptor() ([]byte, []int) {
-	return file_solana_common_proto_rawDescGZIP(), []int{1}
+	return file_common_common_proto_rawDescGZIP(), []int{1}
 }
 
 type BundleHeuristic int32
@@ -161,11 +161,11 @@ func (x BundleHeuristic) String() string {
 }
 
 func (BundleHeuristic) Descriptor() protoreflect.EnumDescriptor {
-	return file_solana_common_proto_enumTypes[2].Descriptor()
+	return file_common_common_proto_enumTypes[2].Descriptor()
 }
 
 func (BundleHeuristic) Type() protoreflect.EnumType {
-	return &file_solana_common_proto_enumTypes[2]
+	return &file_common_common_proto_enumTypes[2]
 }
 
 func (x BundleHeuristic) Number() protoreflect.EnumNumber {
@@ -174,7 +174,7 @@ func (x BundleHeuristic) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use BundleHeuristic.Descriptor instead.
 func (BundleHeuristic) EnumDescriptor() ([]byte, []int) {
-	return file_solana_common_proto_rawDescGZIP(), []int{2}
+	return file_common_common_proto_rawDescGZIP(), []int{2}
 }
 
 type Chain int32
@@ -219,11 +219,11 @@ func (x Chain) String() string {
 }
 
 func (Chain) Descriptor() protoreflect.EnumDescriptor {
-	return file_solana_common_proto_enumTypes[3].Descriptor()
+	return file_common_common_proto_enumTypes[3].Descriptor()
 }
 
 func (Chain) Type() protoreflect.EnumType {
-	return &file_solana_common_proto_enumTypes[3]
+	return &file_common_common_proto_enumTypes[3]
 }
 
 func (x Chain) Number() protoreflect.EnumNumber {
@@ -232,7 +232,7 @@ func (x Chain) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Chain.Descriptor instead.
 func (Chain) EnumDescriptor() ([]byte, []int) {
-	return file_solana_common_proto_rawDescGZIP(), []int{3}
+	return file_common_common_proto_rawDescGZIP(), []int{3}
 }
 
 type EventMetadata struct {
@@ -246,7 +246,7 @@ type EventMetadata struct {
 func (x *EventMetadata) Reset() {
 	*x = EventMetadata{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_solana_common_proto_msgTypes[0]
+		mi := &file_common_common_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -259,7 +259,7 @@ func (x *EventMetadata) String() string {
 func (*EventMetadata) ProtoMessage() {}
 
 func (x *EventMetadata) ProtoReflect() protoreflect.Message {
-	mi := &file_solana_common_proto_msgTypes[0]
+	mi := &file_common_common_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -272,7 +272,7 @@ func (x *EventMetadata) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EventMetadata.ProtoReflect.Descriptor instead.
 func (*EventMetadata) Descriptor() ([]byte, []int) {
-	return file_solana_common_proto_rawDescGZIP(), []int{0}
+	return file_common_common_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *EventMetadata) GetTime() string {
@@ -296,7 +296,7 @@ type Block struct {
 func (x *Block) Reset() {
 	*x = Block{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_solana_common_proto_msgTypes[1]
+		mi := &file_common_common_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -309,7 +309,7 @@ func (x *Block) String() string {
 func (*Block) ProtoMessage() {}
 
 func (x *Block) ProtoReflect() protoreflect.Message {
-	mi := &file_solana_common_proto_msgTypes[1]
+	mi := &file_common_common_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -322,7 +322,7 @@ func (x *Block) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Block.ProtoReflect.Descriptor instead.
 func (*Block) Descriptor() ([]byte, []int) {
-	return file_solana_common_proto_rawDescGZIP(), []int{1}
+	return file_common_common_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Block) GetTimestamp() int64 {
@@ -368,7 +368,7 @@ type BundleTransaction struct {
 func (x *BundleTransaction) Reset() {
 	*x = BundleTransaction{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_solana_common_proto_msgTypes[2]
+		mi := &file_common_common_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -381,7 +381,7 @@ func (x *BundleTransaction) String() string {
 func (*BundleTransaction) ProtoMessage() {}
 
 func (x *BundleTransaction) ProtoReflect() protoreflect.Message {
-	mi := &file_solana_common_proto_msgTypes[2]
+	mi := &file_common_common_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -394,7 +394,7 @@ func (x *BundleTransaction) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BundleTransaction.ProtoReflect.Descriptor instead.
 func (*BundleTransaction) Descriptor() ([]byte, []int) {
-	return file_solana_common_proto_rawDescGZIP(), []int{2}
+	return file_common_common_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *BundleTransaction) GetSource() BundleSource {
@@ -449,7 +449,7 @@ type Transaction struct {
 func (x *Transaction) Reset() {
 	*x = Transaction{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_solana_common_proto_msgTypes[3]
+		mi := &file_common_common_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -462,7 +462,7 @@ func (x *Transaction) String() string {
 func (*Transaction) ProtoMessage() {}
 
 func (x *Transaction) ProtoReflect() protoreflect.Message {
-	mi := &file_solana_common_proto_msgTypes[3]
+	mi := &file_common_common_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -475,7 +475,7 @@ func (x *Transaction) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Transaction.ProtoReflect.Descriptor instead.
 func (*Transaction) Descriptor() ([]byte, []int) {
-	return file_solana_common_proto_rawDescGZIP(), []int{3}
+	return file_common_common_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Transaction) GetFee() uint64 {
@@ -540,7 +540,7 @@ type DApp struct {
 func (x *DApp) Reset() {
 	*x = DApp{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_solana_common_proto_msgTypes[4]
+		mi := &file_common_common_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -553,7 +553,7 @@ func (x *DApp) String() string {
 func (*DApp) ProtoMessage() {}
 
 func (x *DApp) ProtoReflect() protoreflect.Message {
-	mi := &file_solana_common_proto_msgTypes[4]
+	mi := &file_common_common_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -566,7 +566,7 @@ func (x *DApp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DApp.ProtoReflect.Descriptor instead.
 func (*DApp) Descriptor() ([]byte, []int) {
-	return file_solana_common_proto_rawDescGZIP(), []int{4}
+	return file_common_common_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *DApp) GetProgramAddress() string {
@@ -604,7 +604,7 @@ type Instruction struct {
 func (x *Instruction) Reset() {
 	*x = Instruction{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_solana_common_proto_msgTypes[5]
+		mi := &file_common_common_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -617,7 +617,7 @@ func (x *Instruction) String() string {
 func (*Instruction) ProtoMessage() {}
 
 func (x *Instruction) ProtoReflect() protoreflect.Message {
-	mi := &file_solana_common_proto_msgTypes[5]
+	mi := &file_common_common_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -630,7 +630,7 @@ func (x *Instruction) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Instruction.ProtoReflect.Descriptor instead.
 func (*Instruction) Descriptor() ([]byte, []int) {
-	return file_solana_common_proto_rawDescGZIP(), []int{5}
+	return file_common_common_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *Instruction) GetIndex() uint32 {
@@ -661,10 +661,10 @@ func (x *Instruction) GetType() string {
 	return ""
 }
 
-var File_solana_common_proto protoreflect.FileDescriptor
+var File_common_common_proto protoreflect.FileDescriptor
 
-var file_solana_common_proto_rawDesc = []byte{
-	0x0a, 0x13, 0x73, 0x6f, 0x6c, 0x61, 0x6e, 0x61, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
+var file_common_common_proto_rawDesc = []byte{
+	0x0a, 0x13, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x18, 0x69, 0x6f, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x73,
 	0x74, 0x72, 0x65, 0x61, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x22,
 	0x23, 0x0a, 0x0d, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61,
@@ -765,20 +765,20 @@ var file_solana_common_proto_rawDesc = []byte{
 }
 
 var (
-	file_solana_common_proto_rawDescOnce sync.Once
-	file_solana_common_proto_rawDescData = file_solana_common_proto_rawDesc
+	file_common_common_proto_rawDescOnce sync.Once
+	file_common_common_proto_rawDescData = file_common_common_proto_rawDesc
 )
 
-func file_solana_common_proto_rawDescGZIP() []byte {
-	file_solana_common_proto_rawDescOnce.Do(func() {
-		file_solana_common_proto_rawDescData = protoimpl.X.CompressGZIP(file_solana_common_proto_rawDescData)
+func file_common_common_proto_rawDescGZIP() []byte {
+	file_common_common_proto_rawDescOnce.Do(func() {
+		file_common_common_proto_rawDescData = protoimpl.X.CompressGZIP(file_common_common_proto_rawDescData)
 	})
-	return file_solana_common_proto_rawDescData
+	return file_common_common_proto_rawDescData
 }
 
-var file_solana_common_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_solana_common_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_solana_common_proto_goTypes = []interface{}{
+var file_common_common_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_common_common_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_common_common_proto_goTypes = []interface{}{
 	(Status)(0),               // 0: io.chainstream.v1.common.Status
 	(BundleSource)(0),         // 1: io.chainstream.v1.common.BundleSource
 	(BundleHeuristic)(0),      // 2: io.chainstream.v1.common.BundleHeuristic
@@ -790,7 +790,7 @@ var file_solana_common_proto_goTypes = []interface{}{
 	(*DApp)(nil),              // 8: io.chainstream.v1.common.DApp
 	(*Instruction)(nil),       // 9: io.chainstream.v1.common.Instruction
 }
-var file_solana_common_proto_depIdxs = []int32{
+var file_common_common_proto_depIdxs = []int32{
 	1, // 0: io.chainstream.v1.common.BundleTransaction.source:type_name -> io.chainstream.v1.common.BundleSource
 	2, // 1: io.chainstream.v1.common.BundleTransaction.heuristic:type_name -> io.chainstream.v1.common.BundleHeuristic
 	0, // 2: io.chainstream.v1.common.Transaction.status:type_name -> io.chainstream.v1.common.Status
@@ -803,13 +803,13 @@ var file_solana_common_proto_depIdxs = []int32{
 	0, // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_solana_common_proto_init() }
-func file_solana_common_proto_init() {
-	if File_solana_common_proto != nil {
+func init() { file_common_common_proto_init() }
+func file_common_common_proto_init() {
+	if File_common_common_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_solana_common_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_common_common_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*EventMetadata); i {
 			case 0:
 				return &v.state
@@ -821,7 +821,7 @@ func file_solana_common_proto_init() {
 				return nil
 			}
 		}
-		file_solana_common_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_common_common_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Block); i {
 			case 0:
 				return &v.state
@@ -833,7 +833,7 @@ func file_solana_common_proto_init() {
 				return nil
 			}
 		}
-		file_solana_common_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_common_common_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BundleTransaction); i {
 			case 0:
 				return &v.state
@@ -845,7 +845,7 @@ func file_solana_common_proto_init() {
 				return nil
 			}
 		}
-		file_solana_common_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_common_common_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Transaction); i {
 			case 0:
 				return &v.state
@@ -857,7 +857,7 @@ func file_solana_common_proto_init() {
 				return nil
 			}
 		}
-		file_solana_common_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_common_common_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DApp); i {
 			case 0:
 				return &v.state
@@ -869,7 +869,7 @@ func file_solana_common_proto_init() {
 				return nil
 			}
 		}
-		file_solana_common_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_common_common_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Instruction); i {
 			case 0:
 				return &v.state
@@ -886,19 +886,19 @@ func file_solana_common_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_solana_common_proto_rawDesc,
+			RawDescriptor: file_common_common_proto_rawDesc,
 			NumEnums:      4,
 			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_solana_common_proto_goTypes,
-		DependencyIndexes: file_solana_common_proto_depIdxs,
-		EnumInfos:         file_solana_common_proto_enumTypes,
-		MessageInfos:      file_solana_common_proto_msgTypes,
+		GoTypes:           file_common_common_proto_goTypes,
+		DependencyIndexes: file_common_common_proto_depIdxs,
+		EnumInfos:         file_common_common_proto_enumTypes,
+		MessageInfos:      file_common_common_proto_msgTypes,
 	}.Build()
-	File_solana_common_proto = out.File
-	file_solana_common_proto_rawDesc = nil
-	file_solana_common_proto_goTypes = nil
-	file_solana_common_proto_depIdxs = nil
+	File_common_common_proto = out.File
+	file_common_common_proto_rawDesc = nil
+	file_common_common_proto_goTypes = nil
+	file_common_common_proto_depIdxs = nil
 }

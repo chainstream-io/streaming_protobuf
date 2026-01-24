@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package io.chainstream.v1.candlestick;
+
+// Dimension enum for candlestick calculations
+enum CandlestickDimension {
+  CANDLESTICK_DIMENSION_UNSPECIFIED = 0;
+  CANDLESTICK_DIMENSION_TOKEN_ADDRESS = 1;
+  CANDLESTICK_DIMENSION_POOL_ADDRESS = 2;
+  CANDLESTICK_DIMENSION_PAIR = 3;
+}
+
+message CandlestickEvents {
+  repeated CandlestickEvent events = 1;
+}
+
+message CandlestickEvent {
+  string token_address = 1;
+  string resolution = 2;
+  string timestamp = 3;
+  string open = 4;
+  string open_in_native = 5;
+  string high = 6;
+  string high_in_native = 7;
+  string low = 8;
+  string low_in_native = 9;
+  string close = 10;
+  string close_in_native = 11;
+  string average_price = 12;
+  string average_price_in_native = 13;
+  string volume = 14;
+  string volume_in_usd = 15;
+  string volume_in_native = 16;
+  int64 trades = 17;
+
+  // Multi-dimension support fields (backward compatible)
+  CandlestickDimension dimension = 100;  // Dimension type
+  string dimension_address = 101;    // corresponding address or identifier
+}

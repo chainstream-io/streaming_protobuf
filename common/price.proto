@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package io.chainstream.v1.price;
+
+message Price {
+  string in_native = 1;
+  string in_usd = 2;
+
+  uint64 updated_ms_at = 99999;
+}

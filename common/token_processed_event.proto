@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package io.chainstream.v1.token;
+
+message TokenProcessed {
+  string uri_data = 500;
+  string description = 501;
+  string image_url = 502;
+  map<string, string> social_medias = 503;
+  string thumb_url = 504;
+}
