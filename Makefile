@@ -47,9 +47,9 @@ generate_evm:
 	@mv evm/messages/evm/*.pb.go evm/messages/ 2>/dev/null || true
 	@rmdir evm/messages/evm 2>/dev/null || true
 	protoc \
-	-I=. \
-	--python_out="evm/python" \
-	$(shell find ./evm -type f -name '*.proto')
+    	-I=. \
+		--python_out="evm/python" \
+    	$(shell find ./evm -type f -name '*.proto')
 
 generate_solana:
 	protoc \
@@ -64,11 +64,11 @@ generate_solana:
 	@mv solana/messages/solana/*.pb.go solana/messages/ 2>/dev/null || true
 	@rmdir solana/messages/solana 2>/dev/null || true
 	protoc \
-	-I=. \
-	--python_out="solana/python" \
+    	-I=. \
+		--python_out="solana/python" \
 	$(shell find ./solana -type f -name '*.proto')
 
-generate_tron:
+ generate_tron:
 	protoc \
 	-I=. \
 	--go_out=tron/messages \
@@ -80,9 +80,9 @@ generate_tron:
 	@mv tron/messages/tron/*.pb.go tron/messages/ 2>/dev/null || true
 	@rmdir tron/messages/tron 2>/dev/null || true
 	protoc \
-	-I=. \
-	--python_out="tron/python" \
-	$(shell find ./tron -type f -name '*.proto')
+		-I=. \
+		--python_out="tron/python" \
+		$(shell find ./tron -type f -name '*.proto')
 
 clean:
 	find . -name "*.pb.go" -type f -delete
