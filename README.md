@@ -9,13 +9,23 @@ streaming_protobuf/
 ├── common/                       # Cross-chain common definitions
 │   ├── common.proto              # Base structures (Block, Transaction, etc.)
 │   ├── trade_event.proto         # DEX trade events
+│   ├── trade_processed_event.proto
 │   ├── token_event.proto         # Token events
-│   ├── balance_event.proto       # Balance change events
-│   ├── dex_pool_event.proto      # DEX pool events
-│   ├── transfer_event.proto      # Transfer events
-│   ├── candlestick.proto         # Candlestick (OHLCV) data
-│   ├── trade_stat.proto          # Trade statistics
+│   ├── token_processed_event.proto
+│   ├── token_price_event.proto   # Token price events
+│   ├── token_supply_event.proto  # Token supply events
+│   ├── token_supply_processed_event.proto
+│   ├── token_market_cap_event.proto
 │   ├── token_holding.proto       # Token holding data
+│   ├── balance_event.proto       # Balance change events
+│   ├── balance_processed_event.proto
+│   ├── dex_pool_event.proto      # DEX pool events
+│   ├── dex_pool_processed_event.proto
+│   ├── candlestick.proto         # Candlestick (OHLCV) data
+│   ├── candlestick_agg.proto     # Aggregated candlestick data
+│   ├── trade_stat.proto          # Trade statistics
+│   ├── trade_stat_agg.proto      # Aggregated trade statistics
+│   ├── price.proto               # Price definitions
 │   ├── messages/                 # Generated Go code
 │   └── python/common/            # Generated Python code
 ├── evm/                          # EVM chains (Ethereum, BSC, Base, etc.)
@@ -24,7 +34,7 @@ streaming_protobuf/
 │   ├── messages/                 # Generated Go code
 │   └── python/evm/               # Generated Python code
 ├── solana/                       # Solana chain
-│   ├── transfer_event.proto      # Transfer events
+│   ├── transfer_event.proto      # Solana-specific transfer events
 │   ├── transfer_processed_event.proto
 │   ├── messages/                 # Generated Go code
 │   └── python/solana/            # Generated Python code
@@ -65,13 +75,18 @@ The following Protobuf definitions apply to all supported chains (replace `{chai
 | `{chain}.dex.pools.processed` | `dex_pool_event.proto` | `DexPoolEvents` | Enriched with liquidity (USD/Native) |
 | `{chain}.token-supplies` | `token_supply_event.proto` | `TokenSupplyEvents` | Token supply events |
 | `{chain}.token-supplies.processed` | `token_supply_event.proto` | `TokenSupplyEvents` | Enriched with market cap |
-| `{chain}.transfers` | `transfer_event.proto` | `TransferEvents` | Token transfer events |
-| `{chain}.transfers.processed` | `transfer_event.proto` | `TransferEvents` | Enriched with USD/Native value |
 | `{chain}.token-prices` | `token_price_event.proto` | `TokenPriceEvents` | Token price events |
 | `{chain}.candlesticks` | `candlestick.proto` | `CandlestickEvents` | OHLCV candlestick data |
 | `{chain}.trade-stats` | `trade_stat.proto` | `TradeStatEvents` | Trade statistics |
 | `{chain}.token-holdings` | `token_holding.proto` | `TokenHoldingEvents` | Token holding statistics |
 | `{chain}.token-market-caps.processed` | `token_market_cap_event.proto` | `TokenMarketCapEvents` | Token market cap events |
+
+### Solana-Specific Topics
+
+| Topic | Proto File | Message Type | Description |
+|-------|------------|--------------|-------------|
+| `sol.transfers` | `solana/transfer_event.proto` | `TransferEvents` | Solana token transfer events |
+| `sol.transfers.processed` | `solana/transfer_processed_event.proto` | `TransferProcessedEvents` | Enriched with USD/Native value |
 
 ### EVM-Specific Topics (BSC / ETH)
 
@@ -211,10 +226,19 @@ for event in trade_events.events:
 | `TokenEvent` | Token event |
 | `BalanceEvent` | Balance change event |
 | `DexPoolEvent` | DEX pool event |
-| `TransferEvent` | Transfer event |
 | `CandlestickEvent` | OHLCV candlestick |
 | `TradeStatEvent` | Trade statistics |
 | `TokenHoldingEvent` | Token holding data |
+| `TokenPriceEvent` | Token price event |
+| `TokenSupplyEvent` | Token supply event |
+| `TokenMarketCapEvent` | Token market cap event |
+
+### Solana
+
+| Message | Description |
+|---------|-------------|
+| `TransferEvent` | Solana transfer event |
+| `TransferProcessedEvent` | Processed transfer event with USD/Native value |
 
 ### EVM
 
