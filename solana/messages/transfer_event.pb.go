@@ -7,7 +7,7 @@
 package solana_messages
 
 import (
-	messages "github.com/chainstream-io/streaming_protobuf/v1/common/messages"
+	messages "github.com/chainstream-io/streaming_protobuf/common/messages"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"

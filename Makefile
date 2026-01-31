@@ -1,4 +1,4 @@
-MODULE = github.com/chainstream/streaming_protobuf/v1
+MODULE = github.com/chainstream-io/streaming_protobuf
 
 all: generate_common generate_evm generate_solana generate_tron
 

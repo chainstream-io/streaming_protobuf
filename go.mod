@@ -1,4 +1,4 @@
-module github.com/chainstream-io/streaming_protobuf/v1
+module github.com/chainstream-io/streaming_protobuf
 
 go 1.23.0
 
